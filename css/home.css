@@ -1,0 +1,108 @@
+/* ============================================================
+   PSYCHEELOOP — HOME PAGE STYLES
+   Reads color/type/spacing values from theme.css.
+   ============================================================ */
+
+.hero {
+  padding: var(--space-6) 0 var(--space-5);
+  text-align: center;
+}
+
+.hero-mark {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto var(--space-3);
+}
+
+.hero-mark circle {
+  fill: none;
+  stroke-width: 1.5;
+  transform-origin: 50% 50%;
+}
+
+.ring-outer  { stroke: var(--color-loop);  animation: spin-slow 40s linear infinite; }
+.ring-middle { stroke: var(--color-clay);  animation: spin-slow-reverse 30s linear infinite; }
+.ring-inner  { stroke: var(--color-sage);  animation: spin-slow 22s linear infinite; }
+
+@keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes spin-slow-reverse { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+
+.hero h1 {
+  max-width: 40rem;
+  margin: 0 auto var(--space-2);
+}
+
+.hero p.lede {
+  max-width: 34rem;
+  margin: 0 auto;
+  font-size: var(--size-lg);
+  color: var(--color-ink-soft);
+}
+
+.hero .eyebrow { display: block; margin-bottom: var(--space-2); }
+
+/* ---- Quiz grid ---- */
+
+.quiz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-3);
+  padding: var(--space-2) 0 var(--space-6);
+}
+
+.quiz-card {
+  background: var(--color-paper-dim);
+  border: 1px solid var(--color-mist);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.quiz-card:hover {
+  border-color: var(--color-loop);
+  transform: translateY(-2px);
+}
+
+.quiz-card .eyebrow { color: var(--color-loop); }
+
+.quiz-card h3 {
+  margin-bottom: var(--space-1);
+}
+
+.quiz-card p {
+  color: var(--color-ink-soft);
+  font-size: var(--size-sm);
+  flex-grow: 1;
+}
+
+.quiz-card .quiz-meta {
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-1);
+}
+
+.quiz-card a.card-link {
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-ink);
+  font-weight: 600;
+  margin-top: var(--space-1);
+}
+
+.quiz-card a.card-link:hover { color: var(--color-loop); }
+
+.coming-soon {
+  opacity: 0.55;
+}
+.coming-soon .card-link { pointer-events: none; }
+
+.section-intro {
+  max-width: 40rem;
+  margin-bottom: var(--space-3);
+}

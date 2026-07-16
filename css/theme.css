@@ -1,0 +1,185 @@
+/* ============================================================
+   PSYCHEELOOP — THEME TOKENS
+   Edit values below to restyle the entire site.
+   Everything else in every stylesheet reads from these variables.
+   ============================================================ */
+
+:root {
+  /* ---- Colors ---- */
+  --color-paper:      #FAFAF7;  /* page background */
+  --color-paper-dim:  #F2F0E9;  /* card / section background */
+  --color-ink:        #1E2422;  /* primary text */
+  --color-ink-soft:   #5B6360;  /* secondary text */
+  --color-loop:       #3F6C67;  /* primary accent — teal */
+  --color-loop-dark:  #2C4E4A;  /* primary accent, hover/dark state */
+  --color-clay:       #C97B5A;  /* secondary accent — warm clay, used sparingly */
+  --color-sage:       #91A98F;  /* tertiary accent — charts, success */
+  --color-mist:       #E7E3DA;  /* borders, dividers */
+  --color-mist-dark:  #D6D1C4;  /* stronger border */
+
+  /* ---- Typography ---- */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    'IBM Plex Mono', 'Courier New', monospace;
+
+  /* ---- Type scale ---- */
+  --size-xs:   0.8rem;
+  --size-sm:   0.925rem;
+  --size-base: 1.05rem;
+  --size-lg:   1.35rem;
+  --size-xl:   2rem;
+  --size-2xl:  2.75rem;
+  --size-3xl:  3.75rem;
+
+  /* ---- Spacing ---- */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6.5rem;
+
+  /* ---- Layout ---- */
+  --max-width: 68rem;
+  --radius: 4px;
+  --radius-lg: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Reserved for future dark-mode support — site currently uses light theme only. */
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--size-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 var(--space-2);
+  color: var(--color-ink);
+}
+
+h1 { font-size: var(--size-3xl); font-weight: 500; }
+h2 { font-size: var(--size-2xl); }
+h3 { font-size: var(--size-xl); }
+h4 { font-size: var(--size-lg); font-weight: 600; }
+
+p { margin: 0 0 var(--space-2); }
+
+a { color: var(--color-loop); text-decoration: none; }
+a:hover { color: var(--color-loop-dark); }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+/* Visible keyboard focus everywhere */
+a:focus-visible, button:focus-visible, input:focus-visible, label:focus-visible {
+  outline: 2px solid var(--color-loop);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+
+.site-nav {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-mist);
+}
+
+.site-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: var(--size-lg);
+  font-weight: 600;
+  color: var(--color-ink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-mark {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: var(--size-sm);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--color-loop);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--color-loop-dark); color: #fff; }
+
+.btn-secondary {
+  background: transparent;
+  border-color: var(--color-mist-dark);
+  color: var(--color-ink);
+}
+.btn-secondary:hover { border-color: var(--color-loop); color: var(--color-loop); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.site-footer {
+  border-top: 1px solid var(--color-mist);
+  padding: var(--space-4) 0;
+  margin-top: var(--space-6);
+  color: var(--color-ink-soft);
+  font-size: var(--size-sm);
+}

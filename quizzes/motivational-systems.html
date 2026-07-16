@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motivational Systems Profile — Psycheeloop</title>
+<meta name="description" content="An original personality framework built from validated motivational science.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/theme.css">
+<link rel="stylesheet" href="../css/quiz.css">
+</head>
+<body>
+
+<div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+
+<nav class="site-nav">
+  <div class="container">
+    <a class="brand" href="../index.html">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" fill="none" stroke="#3F6C67" stroke-width="1.5"/>
+        <circle cx="12" cy="12" r="6" fill="none" stroke="#C97B5A" stroke-width="1.5"/>
+        <circle cx="12" cy="12" r="2" fill="none" stroke="#91A98F" stroke-width="1.5"/>
+      </svg>
+      Psycheeloop
+    </a>
+    <a class="btn btn-secondary" href="../index.html">All quizzes</a>
+  </div>
+</nav>
+
+<main class="container">
+
+  <section id="quiz-section">
+    <div class="quiz-header">
+      <span class="eyebrow">Motivational Systems Profile</span>
+      <h1>What Drives You?</h1>
+      <p class="lede">An original framework built from five independently validated motivational science constructs — approach/threat sensitivity, cognitive style, and social/autonomy needs. You'll get a full profile plus your dominant pattern.</p>
+      <div class="quiz-meta-row"><span id="submit-hint">0 of 30 answered</span></div>
+    </div>
+
+    <div class="question-list" id="question-list"></div>
+
+    <div class="quiz-submit">
+      <p class="hint">Answer every question to see your results.</p>
+      <button class="btn btn-primary" id="submit-btn" disabled>See my results</button>
+    </div>
+  </section>
+
+  <section id="results-section" style="display:none;">
+    <div class="results-header">
+      <span class="eyebrow">Your Motivational Systems Profile</span>
+      <h2 class="result-headline" id="result-headline"></h2>
+      <p class="result-sub" id="result-sub"></p>
+    </div>
+
+    <div class="chart-wrap">
+      <div class="bar-chart" id="bar-chart"></div>
+    </div>
+
+    <div class="result-sections" id="result-cards"></div>
+
+    <div class="disclaimer-box" id="result-disclaimer"></div>
+
+    <div class="retake-row">
+      <button class="btn btn-secondary" id="retake-btn">Retake the quiz</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">Psycheeloop — original, research-informed self-reflection quizzes. Not a substitute for professional advice.</div>
+</footer>
+
+<script src="../data/motivational-systems.js"></script>
+<script src="../js/quiz-engine.js"></script>
+</body>
+</html>

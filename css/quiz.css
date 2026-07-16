@@ -1,0 +1,296 @@
+/* ============================================================
+   PSYCHEELOOP — QUIZ PAGE STYLES
+   Shared by every quiz (Likert-style and multiple-choice).
+   Reads color/type/spacing values from theme.css.
+   ============================================================ */
+
+.quiz-header {
+  padding: var(--space-5) 0 var(--space-3);
+  border-bottom: 1px solid var(--color-mist);
+  margin-bottom: var(--space-4);
+}
+
+.quiz-header .eyebrow { margin-bottom: var(--space-1); }
+
+.quiz-header p.lede {
+  color: var(--color-ink-soft);
+  font-size: var(--size-lg);
+  max-width: 40rem;
+}
+
+.quiz-meta-row {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  color: var(--color-ink-soft);
+}
+
+/* ---- Progress bar ---- */
+
+.progress-track {
+  position: sticky;
+  top: 0;
+  height: 3px;
+  background: var(--color-mist);
+  z-index: 10;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--color-loop);
+  width: 0%;
+  transition: width 0.2s ease;
+}
+
+/* ---- Questions ---- */
+
+.question-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-bottom: var(--space-4);
+}
+
+.question-block {
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-mist);
+}
+
+.question-number {
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  color: var(--color-loop);
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.question-text {
+  font-size: var(--size-lg);
+  margin-bottom: var(--space-2);
+  max-width: 38rem;
+}
+
+/* Likert scale */
+
+.likert-scale {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  max-width: 34rem;
+}
+
+.likert-option {
+  position: relative;
+}
+
+.likert-option input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.likert-option label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.75rem 0.4rem;
+  border: 1px solid var(--color-mist-dark);
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: center;
+  font-size: var(--size-xs);
+  color: var(--color-ink-soft);
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.likert-option .dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-mist-dark);
+}
+
+.likert-option input:checked + label {
+  border-color: var(--color-loop);
+  background: var(--color-paper-dim);
+  color: var(--color-ink);
+}
+.likert-option input:checked + label .dot {
+  background: var(--color-loop);
+  border-color: var(--color-loop);
+}
+.likert-option input:focus-visible + label {
+  outline: 2px solid var(--color-loop);
+  outline-offset: 2px;
+}
+
+/* Multiple choice (used by Logical Reasoning) */
+
+.mc-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 32rem;
+}
+
+.mc-option label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--color-mist-dark);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.mc-option input {
+  margin-top: 0.2rem;
+}
+
+.mc-option input:checked + span {
+  font-weight: 600;
+}
+
+.mc-option:has(input:checked) label {
+  border-color: var(--color-loop);
+  background: var(--color-paper-dim);
+}
+
+/* ---- Submit area ---- */
+
+.quiz-submit {
+  padding: var(--space-3) 0 var(--space-6);
+  text-align: center;
+}
+
+.quiz-submit p.hint {
+  font-size: var(--size-sm);
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-2);
+}
+
+/* ============================================================
+   RESULTS
+   ============================================================ */
+
+.results-header {
+  text-align: center;
+  padding: var(--space-5) 0 var(--space-4);
+}
+
+.results-header .eyebrow { display: block; margin-bottom: var(--space-1); }
+
+.result-headline {
+  font-size: var(--size-2xl);
+  margin-bottom: var(--space-1);
+}
+
+.result-sub {
+  color: var(--color-ink-soft);
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+/* Chart */
+
+.chart-wrap {
+  max-width: 28rem;
+  margin: var(--space-4) auto;
+}
+
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.bar-row .bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  margin-bottom: 0.3rem;
+}
+
+.bar-track {
+  height: 10px;
+  background: var(--color-mist);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--color-loop);
+  border-radius: 6px;
+  width: 0%;
+  transition: width 0.6s ease;
+}
+
+/* Result detail cards */
+
+.result-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3) 0 var(--space-6);
+}
+
+.result-card {
+  background: var(--color-paper-dim);
+  border: 1px solid var(--color-mist);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.result-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.result-card .score-tag {
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  color: var(--color-loop);
+  background: var(--color-paper);
+  border: 1px solid var(--color-mist-dark);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin-left: auto;
+}
+
+.result-card h4 {
+  font-size: var(--size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-loop);
+  margin: var(--space-2) 0 0.4rem;
+}
+
+.result-card p, .result-card li {
+  color: var(--color-ink-soft);
+  font-size: var(--size-sm);
+}
+
+.result-card ul { margin: 0; padding-left: 1.2rem; }
+
+.disclaimer-box {
+  border-left: 3px solid var(--color-clay);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-paper-dim);
+  font-size: var(--size-sm);
+  color: var(--color-ink-soft);
+  margin: var(--space-3) 0;
+}
+
+.retake-row {
+  text-align: center;
+  padding: var(--space-3) 0 var(--space-6);
+}
